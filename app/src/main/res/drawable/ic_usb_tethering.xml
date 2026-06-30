@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    USB Tethering icon — USB plug combined with a small broadcast arc.
+    Viewport: 24×24dp  |  Tinted white at runtime via Glance ImageProvider.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- USB cable body (vertical stem) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11,2 L13,2 L13,13 L11,13 Z" />
+
+    <!-- USB plug head (top bar) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8,2 L16,2 L16,4 L8,4 Z" />
+
+    <!-- Left prong -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9,4 L9,7 L10,7 L10,4 Z" />
+
+    <!-- Right prong -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,4 L14,7 L15,7 L15,4 Z" />
+
+    <!-- USB plug connector (bottom of cable — goes into device) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9,13 L15,13 L15,16 L9,16 Z" />
+
+    <!-- Tethering broadcast arc — outer -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M5.64,17.36 C4.03,15.75 3,13.49 3,11 C3,8.51 4.03,6.25 5.64,4.64 L7.05,6.05
+                          C5.82,7.28 5,8.99 5,11 C5,13.01 5.82,14.72 7.05,15.95 Z" />
+
+    <!-- Tethering broadcast arc — inner -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18.36,17.36 L16.95,15.95 C18.18,14.72 19,13.01 19,11
+                          C19,8.99 18.18,7.28 16.95,6.05 L18.36,4.64
+                          C19.97,6.25 21,8.51 21,11 C21,13.49 19.97,15.75 18.36,17.36 Z" />
+
+    <!-- Centre dot — active tethering indicator -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,21 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0" />
+
+</vector>

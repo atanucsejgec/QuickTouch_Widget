@@ -13,6 +13,8 @@ import com.apk.quicktouchwidget.widget.powermenu.PowerMenuReceiver
 import com.apk.quicktouchwidget.widget.shortcut.ShortcutReceiver
 import com.apk.quicktouchwidget.widget.datasettings.DataSettingsReceiver
 import com.apk.quicktouchwidget.widget.devoptions.DevOptionsReceiver
+import com.apk.quicktouchwidget.widget.usbtethering.UsbTetheringReceiver
+
 
 /**
  * ╔══════════════════════════════════════════════════════════════════╗
@@ -114,6 +116,26 @@ object WidgetRegistry {
             iconRes = R.drawable.ic_data,
             receiverClass = DataSettingsReceiver::class.java,
             category = WidgetCategory.SETTINGS
+        ),
+
+        WidgetConfig(
+            widgetId          = "usb_tethering",
+            widgetName        = R.string.widget_usb_tethering_name,
+            widgetDescription = R.string.widget_usb_tethering_desc,
+            iconRes           = R.drawable.ic_usb_tethering,
+            receiverClass     = UsbTetheringReceiver::class.java,
+            requiresPermission = listOf(
+                android.Manifest.permission.CHANGE_NETWORK_STATE,
+                android.Manifest.permission.ACCESS_NETWORK_STATE
+            ),
+            minAndroidVersion = android.os.Build.VERSION_CODES.N,   // API 24
+            category          = WidgetCategory.FUNCTIONAL,
+            isAvailable       = { context ->
+                // USB tethering is available on all handsets that declare the USB host
+                // feature; tablets/TVs without USB-to-ethernet typically omit it.
+                context.packageManager
+                    .hasSystemFeature(android.content.pm.PackageManager.FEATURE_USB_HOST)
+            }
         ),
 
         WidgetConfig(

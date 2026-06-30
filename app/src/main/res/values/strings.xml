@@ -21,6 +21,7 @@
     <string name="widget_shortcut_name">URL Shortcut</string>
     <string name="widget_datasettings_name">Data Settings</string>
     <string name="widget_devoptions_name">Developer Options</string>
+    <string name="widget_usb_tethering_name">USB Tethering</string>
 
     <!-- Widget Descriptions -->
     <string name="widget_flashlight_desc">Toggle flashlight on and off</string>
@@ -30,6 +31,7 @@
     <string name="widget_shortcut_desc">Open any URL in browser or app</string>
     <string name="widget_datasettings_desc">Quick access to mobile data settings</string>
     <string name="widget_devoptions_desc">Open developer options directly</string>
+    <string name="widget_usb_tethering_desc">Toggle USB tethering on or off</string>
 
     <!-- Widget States -->
     <string name="flashlight_on">ON</string>
@@ -41,6 +43,8 @@
     <string name="open_url">Open URL</string>
     <string name="open_data_settings">Data Settings</string>
     <string name="open_dev_options">Dev Options</string>
+    <string name="widget_usb_tethering_on">Tethering ON</string>
+    <string name="widget_usb_tethering_off">Tethering OFF</string>
 
     <!-- Widget Status -->
     <string name="ready">Ready</string>
