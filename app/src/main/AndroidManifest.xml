@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".QuickTouchApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QuickTouchWidget">
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- Main Activity                                              -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.QuickTouchWidget"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Shortcut Configuration Activity -->
+        <activity
+            android:name=".widget.shortcut.ShortcutConfigActivity"
+            android:exported="false"
+            android:theme="@style/Theme.QuickTouchWidget" />
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- Widget Receivers                                           -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+
+        <!-- Flashlight Widget -->
+        <receiver
+            android:name=".widget.flashlight.FlashlightReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/flashlight_widget_info" />
+        </receiver>
+
+        <!-- Volume Widget -->
+        <receiver
+            android:name=".widget.volume.VolumeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/volume_widget_info" />
+        </receiver>
+
+        <!-- Lock Screen Widget -->
+        <receiver
+            android:name=".widget.lockscreen.LockScreenReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/lockscreen_widget_info" />
+        </receiver>
+
+        <!-- Power Menu Widget -->
+        <receiver
+            android:name=".widget.powermenu.PowerMenuReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/powermenu_widget_info" />
+        </receiver>
+
+        <!-- Shortcut Widget -->
+        <receiver
+            android:name=".widget.shortcut.ShortcutReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/shortcut_widget_info" />
+        </receiver>
+
+        <!-- Data Settings Widget -->
+        <receiver
+            android:name=".widget.datasettings.DataSettingsReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/datasettings_widget_info" />
+        </receiver>
+
+        <!-- Dev Options Widget -->
+        <receiver
+            android:name=".widget.devoptions.DevOptionsReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/devoptions_widget_info" />
+        </receiver>
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- Device Admin Receiver                                      -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <receiver
+            android:name=".admin.MyDeviceAdminReceiver"
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_policy" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <!-- Accessibility Service                                      -->
+        <!-- ══════════════════════════════════════════════════════════ -->
+        <service
+            android:name=".service.PowerMenuAccessibilityService"
+            android:exported="false"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+    </application>
+
+</manifest>

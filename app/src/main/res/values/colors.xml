@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Widget Colors -->
+    <color name="widget_background">#1A1A2E</color>
+    <color name="widget_accent">#E94560</color>
+    <color name="widget_text">#FFFFFF</color>
+    <color name="widget_surface">#16213E</color>
+    <color name="widget_secondary">#0F3460</color>
+    <color name="widget_success">#4CAF50</color>
+    <color name="widget_warning">#FFC107</color>
+    <color name="widget_error">#F44336</color>
+    <color name="widget_on">#4CAF50</color>
+    <color name="widget_off">#757575</color>
+
+    <!-- App Colors -->
+    <color name="app_background">#0A0A1A</color>
+    <color name="app_surface">#1A1A2E</color>
+    <color name="app_primary">#E94560</color>
+    <color name="app_on_primary">#FFFFFF</color>
+    <color name="app_secondary">#16213E</color>
+    <color name="app_on_secondary">#FFFFFF</color>
+    <color name="app_text_primary">#FFFFFF</color>
+    <color name="app_text_secondary">#B0B0B0</color>
+</resources>
